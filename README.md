@@ -1,35 +1,39 @@
 # Duct
 
-Duct is a highly modular framework for building server-side applications in Clojure using data-driven architecture.
+Duct는 data 기반 아키텍쳐를 사용해 서버사이드 어플리케이션을 빌드하기위한 모듈형 프레임워크입니다.
+이는 [Arachne](http://arachne-framework.org/) 의 범위와 비슷하고,
+[Integrant](https://github.com/weavejester/integrant)를 기반으로 합니다.
+Duct는 청사진 역할을 하는 변하지 않는 컨피그레이션의 구성에 기반해서 어플리케이션을 빌드합니다.
+컨피그레이션 파일을 다루거나 쿼리를 통해 정교한 동작을 생성할 수 있습니다.
 
-It is similar in scope to [Arachne](http://arachne-framework.org/), and is based on [Integrant](https://github.com/weavejester/integrant). Duct builds applications around an immutable configuration that acts as a structural blueprint. The configuration can be manipulated and queried to produce sophisticated behavior.
+## 빠르게 시작하기
 
-## Quick Start
-
-To create a new Duct project with Leiningen:
+Lieningen으로 새로운 Duct 프로젝트 만들기:
 
 ```bash
 lein new duct <your project name>
 ```
 
-This will create a minimal Duct project. You can extend this by appending profile hints to add extra functionality.
+이렇게하면 간단한 Duct프로젝트가 생성됩니다.
+profile을 붙여 기능을 확잘할 수도 있습니다.
 
-* `+api`      adds API middleware and handlers
-* `+ataraxy`  adds the Ataraxy router
-* `+cljs`     adds in ClojureScript compilation and hot-loading
-* `+example`  adds an example handler
-* `+heroku`   adds configuration for deploying to Heroku
-* `+postgres` adds a PostgreSQL dependency and database component
-* `+site`     adds site middleware, a favicon, webjars and more
-* `+sqlite`   adds a SQLite dependency and database component
+* `+api`      API 미들웨어와 핸들러 추가
+* `+ataraxy`  Ataraxy 라우터 추가
+* `+cljs`     ClojureScript 모음과 Hot-loading 추가
+* `+example`  예제 핸들러 추가
+* `+heroku`   Heroku 배포를 위한 설정 추가
+* `+postgres` PostgreSQL 의존성과 데이터베이스 컴포넌트 추가
+* `+site`     site 미들웨어, favicon, webjars 등을 추가
+* `+sqlite`   SQLite 의존성과 데이터베이스 컴포넌트 추가
 
-For example:
+예:
 
 ```bash
 lein new duct foobar +site +example
 ```
 
-As with all Leiningen templates, Duct will create a new directory with the same name as your project. For information on how to run and build your project, refer to the project's `README.md` file.
+모든 Leiningen 템플릿과 마찬가지로 Duct는 프로젝트와 동일한 이름의 새 디렉토리를 만듭니다.
+프로젝트를 실행하고 빌드하는 방법은 프로젝트의 `README.md` 파일에 있습니다.
 
 ## Concepts
 
