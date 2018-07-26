@@ -4,7 +4,7 @@
 
 Update the Duct dependencies in your project file:
 
-```clojure
+```text
 [duct/core "0.6.1"]
 [duct/module.logging "0.3.0"]
 [duct/module.web "0.6.0"]
@@ -15,22 +15,19 @@ Update the Duct dependencies in your project file:
 
 Update the `duct/lein-duct` plugin version:
 
-```clojure
+```text
 [duct/lein-duct "0.10.0"]
 ```
 
-Add the `duct.core/load-hierarchy` function to `main.clj` and
-`dev.clj`. This should be a top-level form placed just below the `ns`
-declaraton:
+Add the `duct.core/load-hierarchy` function to `main.clj` and `dev.clj`. This should be a top-level form placed just below the `ns` declaraton:
 
-```clojure
+```text
 (duct/load-hierarchy)
 ```
 
-Change the `-main` function in `main.clj` to include a `prep` step. It
-should look something like:
+Change the `-main` function in `main.clj` to include a `prep` step. It should look something like:
 
-```clojure
+```text
 (defn -main [& args]
   (let [keys (or (duct/parse-keys args) [:duct/daemon])]
     (-> (duct/read-config (io/resource "foo/config.edn"))
@@ -40,6 +37,7 @@ should look something like:
 
 Add a require for `duct.core.repl` in `dev.clj`:
 
-```clojure
+```text
 [duct.core.repl :as duct-repl]
 ```
+
